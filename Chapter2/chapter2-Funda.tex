@@ -1,41 +1,26 @@
-\chapter{Theory and Fundamentals of Analog to Digital converter}
+\chapter{Theory and Fundamentals of NeuroLearn}
 
-Every chapter should start with an introduction paragraph. This paragraph should brief about the flow of the chapter. This introduction can be limited within 4 to 5 sentences. The chapter heading should be appropriately modified (a sample heading is shown for this chapter). But don't start the introduction paragraph in the chapters 2 to end with "This chapter deals with....". Instead you should bring in the highlights of the chapter in the introduction paragraph.
+This chapter presents the theoretical foundations and core principles behind the proposed AI-driven adaptive learning platform. The system combines cognitive learning theories, behavioral analytics, retrieval-augmented generation, accessibility-first design, and multi-modal content delivery to create a personalized educational experience. The chapter also discusses the hybrid learner profiling mechanism, dynamic modality adaptation, accessibility integration, and the gesture-based hardware module developed for inclusive interaction.
 
-\section{Contents of this chapter}
+\section{Dynamic Learning Style Modeling}
 
-This chapter should discuss about the prerequisite learnings before the execution of the project. Organise and elaborate the theory and necessary fundamentals required for the execution of the project. You can use \verb|\subsections| and \verb|subsubsections| in this chapter.
-\section{Contents of this chapter}
-If a specific programming language is required for the project, a section can be allotted in this chapter to discuss it. 
-\section{Contents of this chapter}
-Tools used could be another possible section to discuss about the software tools used in the work. 
-\section{Contents of this chapter}
-The details in this chapter can be added in consultation with the project guide. For an internship based projects, subsections can be modified accordingly. 
+The platform is built upon the VARK framework, which classifies learners into Visual, Auditory, Reading/Writing, and Kinesthetic modalities. Unlike traditional systems that treat learning styles as static traits, the proposed system models learner preference as a dynamic behavioral signal. The learner initially completes a VARK questionnaire, generating a baseline modality vector. Over time, real-time interaction behavior such as content replay frequency, time spent on simulations, use of audio explanations, and navigation patterns are continuously monitored. The final learner profile is computed using exponential decay fusion between the questionnaire profile and behavioral evidence, enabling the system to gradually shift from self-reported preference to observed interaction behavior.
 
-\section{Use of Acronyms and Glossaries}
-Acronyms are nothing but the short form of regular repeated word. Say for example, you have a repeat word "Integrated Circuits" and you want to use a short form for it as "IC". For which you have to first define the word and use it wherever you wanted to refer it.
+\section{Multi-Modal Content Generation}
+The adaptive content engine generates learning material according to the learner’s dominant modality. Visual learners receive animated diagrams, concept maps, and graphical explanations generated using tools such as Matplotlib, Graphviz, and Manim. Auditory learners receive AI-generated speech explanations and voice-guided walkthroughs using neural text-to-speech systems. Reading/Writing learners are provided with structured summaries, detailed notes, and text-based explanations generated using Gemini and BART models. Kinesthetic learners interact with virtual labs, simulations, drag-and-drop exercises, and embedded coding environments. This adaptive approach reduces cognitive overload while improving engagement and concept retention.
+. 
+\section{Retrieval-Augmented Generation Pipeline}
+To maintain factual accuracy and syllabus alignment, the platform employs a Retrieval-Augmented Generation (RAG) pipeline. User queries are encoded using BERT embeddings and matched against a FAISS vector database containing curated educational content from engineering subjects. Relevant passages are retrieved based on cosine similarity and supplied to the Gemini language model for content generation. This process significantly reduces hallucination rates and ensures that all generated content remains curriculum aligned. The pipeline also supports modality-aware response generation, allowing the same concept to be delivered in multiple formats.
 
-First, let's look at the definition, which has to be entered in \texttt{Glossaries.tex} under \texttt{CoverPages} directory.
-\begin{verbatim}
-%\newacronym{<Ref>}{<Short-Form>}{<Expanded word>}
-\newacronym{ic}{IC}{Integrated Circuits}
-\end{verbatim}
-In order to use the defined acronym, use the commands \verb|\gls{<Ref>}| as shown below
+\section{Accessibility-First System Architecture}
+Accessibility is integrated directly into the architecture of the platform instead of being treated as an optional feature. For visually impaired users, the system automatically prioritizes audio-based interaction and screen-reader compatibility. For hearing-impaired learners, captions, transcripts, and visual alternatives are provided for all audio content. Motor-impaired users are supported through keyboard navigation, gesture-based input systems, and simplified interaction pathways. The platform follows WCAG accessibility guidelines and allows users to manually override automatically inferred preferences whenever required.
 
-As an example, call the definition with \verb|\gls{ic}| and the outcome of it is reflected as, \gls{ic}.
+\section{Gesture-Based Hardware Input Module}
+The gesture input module is built using a fabric glove as the base, onto which flex sensors are affixed using adhesive along each finger. When the user forms a hand sign, the flex sensors bend and change their resistance proportionally. Each sensor is connected in a voltage divider configuration with a 10k$\Omega$ resistor, allowing the Arduino to read the analog voltage output corresponding to each finger’s position.
 
-Note: For the First time, the expanded form appears along with the Short-form definition inside parenthesis. But when the \verb|\gls{}| is repeated, only Short-form appears inside the parenthesis.
+The Arduino reads these analog values in real time, processes them against a predefined set of gesture thresholds, and maps the combination to a corresponding character or word. The recognized output is simultaneously displayed on the LCD screen for immediate visual feedback to the user, confirming that the gesture was read correctly before it is passed to the platform.
 
-Now, let's look at the definition of symbols. Follow the syntax to define the symbol first, inside \texttt{Glossaries.tex} under \texttt{CoverPages} directory.
-\begin{verbatim}
-%\newglossaryentry{<Ref>}{name=<Symbol>, description={<description about the symbol>}, type=<List type>}
-\newglossaryentry{rc}{name=$\tau$, description={Time constant}, type=symbolList}
-\end{verbatim}
+The LCD display is connected to the Arduino via standard parallel or I2C interface and shows the detected gesture as readable text. This module enhances accessibility for users with speech or motor impairments and integrates directly into the adaptive learning pipeline. Once recognized, the gesture is converted into text and processed identically to typed or spoken input.
 
-As an example, the rate of change is defined with \verb|\gls{rc}| and the outcome of it is reflected as, the rate of change is defined with \gls{rc}.
-
-\vspace{0.75cm}
-
- \textbf{The chapters should not end with figures, instead bring the paragraph explaining about the figure at the end followed by a summary paragraph.}
-
-After elaborating the various sections of the chapter (From Chapter 2 onwards), a summary paragraph should be written discussing the highlights of that particular chapter. This summary paragraph should not be numbered separately. This paragraph should connect the present chapter to the next chapter.
+\section{Technical Stack and System Integration}
+The frontend of the platform is developed using React.js, while the backend is implemented using Python Flask. The AI components include BERT for semantic embeddings, Gemini for text generation, BART for summarization, FAISS for vector retrieval, and Google Cloud Text-to-Speech for auditory content delivery. Data persistence is managed using PostgreSQL and MongoDB. The system follows a microservices architecture, ensuring scalability, modularity, and efficient deployment across institutional environments.

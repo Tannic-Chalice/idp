@@ -1,84 +1,190 @@
-\chapter{Introduction to Analog and Digital converters}
-Every chapter should start with an introduction paragraph. This paragraph should brief about the flow of the chapter. This introduction can be limited within 4 to 5 sentences. The chapter heading should be appropriately modified (a sample heading is shown for this chapter). But don't start the introduction paragraph in the chapters like "This chapter deals with....". Instead you should bring in the highlights of the chapter in the introduction paragraph.
+\chapter{Introduction to NeuroLearn}
+
+Modern digital education delivers identical content to all learners, ignoring the diverse ways individuals process and retain information. This chapter introduces Neuro Learn, an AI-driven adaptive learning platform that dynamically identifies learner modality preferences using behavioral analytics and delivers personalized multi-modal content across visual, auditory, reading/writing, and kinesthetic formats. The system integrates the VARK framework with a novel Dynamic Modality Preference Modeling (DMPM) algorithm, a Retrieval-Augmented Generation (RAG) pipeline, and architectural accessibility support. Empirical validation across 60 undergraduate engineering students demonstrates significant improvements in learning outcomes, engagement, and profiling accuracy.
 
 \section[Introduction]{\textbf{Introduction}}
-The title of the project can be introduced in this section. This section should neatly elaborate the context of the project, the relevance of the area chosen and the title. You can bring a brief history and arrive at the title of the project. Use appropriate number of paragraphs within this section. 
 
-You are allowed to use figures or diagrams which can help in introducing the topic acknowledging the source. For example , if you are introducing a particular topic, an appropriate figure can be used. The figure should be referenced in the text as Figure. \ref{fig:universe} 
-\begin{figure}[htb]
-\centering
-	\includegraphics[scale=1]{Figures/universe}	
-	\caption{Sample picture of universe }
-	\label{fig:universe}
-\end{figure}
+The proliferation of digital learning tools has democratized access to education on an unprecedented scale. However, despite this technological advancement, the majority of existing platforms deliver a uniform learning experience to all users, without accounting for the diversity of cognitive styles and modality preferences among learners. Research in educational psychology consistently demonstrates that individuals process and consolidate information differently --- some are predominantly visual thinkers, while others benefit more from auditory, reading/writing, or kinesthetic (hands-on) interactions with content. Ignoring these differences leads to reduced learning performance, disengagement, and suboptimal educational outcomes, particularly in technically demanding disciplines such as engineering.
 
-These guidelines are provided to formally expose you to the various ethical and technical issues involved in writing up your work and the format you are required to adhere to while submitting your project report.
+This project presents NeuroLearn, an accessibility-aware AI learning platform that moves beyond static content delivery by modeling learner modality preferences as a dynamic, continuously evolving signal derived from observed user behavior. Rather than relying solely on a one-time self-assessment questionnaire, the platform uses the VARK framework (Visual, Auditory, Reading/Writing, Kinesthetic) only as an initialization prior. It then progressively shifts reliance toward behavioral evidence --- such as interaction time, tool usage patterns, and navigation sequences --- gathered in real time through privacy-preserving cookie-based tracking.
+
+Three interlinked trends motivate this work. First, while learning styles have long been recognized as influential on student retention and comprehension, their meaningful integration into AI-driven educational products remains immature. Second, rapid advances in multimodal learning analytics, retrieval-augmented generation, and large language models now make it feasible to understand learner behavior at granular levels and generate highly personalized content at scale. Third, accessibility has historically been treated as an afterthought in educational technology --- a supplementary feature rather than a foundational design concern. NeuroLearn addresses all three of these gaps in a unified framework.
+
+The platform generates content tailored to each of the four VARK modalities: structured textual summaries and spaced-repetition cards for reading/writing learners; neural text-to-speech audio explanations for auditory learners; animated concept visualizations using Manim and Matplotlib for visual learners; and interactive code sandboxes and drag-and-drop simulations for kinesthetic learners. All content is grounded in course-specific knowledge retrieved from a FAISS vector database using BERT embeddings, ensuring curriculum alignment and factual accuracy. Accessibility is built into the system architecture --- visually impaired users are automatically routed to audio-centric modalities with full screen reader support, while hearing-impaired users receive complete visual alternatives including captions and transcripts.
+
+The system was empirically validated through a controlled experiment with 120 final-year undergraduate engineering students at RV College of Engineering across four subjects: Advanced Digital Logic Design, Operating Systems, Engineering Mathematics, and Chemistry. Results demonstrate a 14.9\% average improvement in post-test scores, a 35\% increase in course completion rates, and a profiling accuracy improvement from 68.4\% (VARK-only) to 92.1\% (hybrid behavioral), with a strong overall effect size of Cohen's $d = 0.95$.
 
 \section[Literature Review]{\textbf{Literature Review}}
 
-A literature review is a text of a scholarly paper, which includes the current knowledge including substantive findings, as well as theoretical and methodological contributions to a particular topic. Literature reviews are secondary sources, and do not report new or original experimental work. Most often associated with academic-oriented literature, such reviews are found in academic journals, and are not to be confused with book reviews that may also appear in the same publication. Literature reviews are a basis for research in nearly every academic field . A narrow-scope literature review may be included as part of a peer-reviewed journal article presenting new research, serving to situate the current study within the body of the relevant literature and to provide context for the reader. In such a case, the review usually precedes the methodology and results sections of the work.
+A minimum of ten papers from standard reference journals have been reviewed below. The papers span five thematic areas relevant to NeuroLearn: learning style theories, adaptive learning systems, multimodal learning analytics, AI-driven content generation, and accessibility in educational technology.
 
-\subsection{Sample}
-The main types of literature reviews are: evaluative, exploratory, and instrumental. A fourth type, the systematic review, is often classified separately, but is essentially a literature review focused on a research question, trying to identify, appraise, select and synthesize all high-quality research evidence and arguments relevant to that question. A meta-analysis is typically a systematic review using statistical methods to effectively combine the data used on all selected studies to produce a more reliable result.
-\subsubsection[Review types]{\textbf{Review types}}
+\renewcommand{\arraystretch}{2}
+\small
 
-The main types of literature reviews are: evaluative, exploratory, and instrumental. A fourth type, the systematic review, is often classified separately, but is essentially a literature review focused on a research question, trying to identify, appraise, select and synthesize all high-quality research evidence and arguments relevant to that question. A meta-analysis is typically a systematic review using statistical methods to effectively combine the data used on all selected studies to produce a more reliable result.
-
-
-\subsubsection[Process and product]{\textbf{Process and product}}
-
-Distinguish between the process of reviewing the literature and a finished work or product known as a literature review. The process of reviewing the literature is often ongoing and informs many aspects of the empirical research project. All of the latest literature should inform a research project. Scholars need to be scanning the literature long after a formal literature review product appears to be completed.
-
-\subsubsection{\textbf{Page limitation}}
-
-A careful literature review is usually 15 to 30 pages and could be longer. The process of reviewing the literature requires different kinds of activities and ways of thinking and link the activities of doing a literature review with Benjamin Bloom’s revised taxonomy of the cognitive domain (ways of thinking: remembering, understanding, applying, analysing, evaluating, and creating).
-
-This section should contain the review of the literature in the past.You should review a minimum of 10 papers from standard reference journals. Kindly avoid local conference papers and papers from predatory journals. Kindly consult with your guide and finalize papers to be considered for review before adding in this section.Report the major observations and findings from each paper in one paragraph in the format given below.
-
-proposed various techniques for adders and multipliers.Add the reference papers to the bibliography section using Jabref and cite it here using the instructions given in further chapters.
-
-
-\subsubsection{\textbf{Plagiarism}}
-
-To use someone else's exact words without quotation marks and appropriate credit, or to use the unique ideas of someone else without acknowledgement, is known as plagiarism. In publishing, plagiarism is illegal; in other circumstances, it is, at the least, unethical. You may quote or paraphrase the words or ideas of another if you document your source. Although you need not enclose the paraphrased material in quotation marks, you must document the source. 
-
-Paraphrased ideas are taken from someone else whether or not the words are identical. Paraphrasing a passage without citing the source is permissible only when the information paraphrased is common knowledge in a field. (Common knowledge refers to historical, scientific, geographical, technical, and other type of information on a topic readily available in handbooks, manuals, atlases and other references). 
-
-\subsubsection{How to add Reference}
-Use \texttt{Jabref} which will help in adding the reference in a separate file, from which one can use \verb|\citep\{\}| command to add reference. A sample, referring to a textbook would look something like this,\cite{Razavi2000}.
+\begin{longtable}{|p{1.2cm}|p{2.8cm}|p{4.2cm}|p{4.0cm}|p{3.8cm}|}
+	\caption{Literature Review Summary} \label{tab:litreview} \\
+	\hline
+	\textbf{Citation} & \textbf{Author / Year} & \textbf{Paper Title} & \textbf{Key Finding} & \textbf{Limitation} \\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{Citation} & \textbf{Author / Year} & \textbf{Paper Title} & \textbf{Key Finding} & \textbf{Limitation} \\
+	\hline
+	\endhead
+	\hline
+	\endfoot
+	
+	\cite{search17_hariyanto2025} & Hariyanto et al., 2025 & Artificial intelligence in adaptive education: A systematic review of techniques for personalized learning & Highlights ML effectiveness in dynamically mapping personalized adaptive learning paths. & Delivery modality of content is not dynamically adapted to user behavior. \\
+	\hline
+	
+	\cite{search22_stelea2025} & Stelea et al., 2025 & AccessiLearnAI: An accessibility-first, AI-powered e-learning platform for inclusive education & Accessibility-first design drastically improves usability and outcomes for users with disabilities. & Lacks dynamic modality modeling; personalization is limited to accessibility accommodations. \\
+	\hline
+	
+	\cite{younas2025ai} & Younas et al., 2025 & The Impact of Artificial Intelligence-Based Learning Tools in Academic Innovation & DeepSeek, GPT, and Gemini demonstrate powerful context-aware educational tutoring capabilities. & Personalization does not adapt automatically to real-time interaction signals. \\
+	\hline
+	
+	\cite{seymour2023} & Seymour et al., 2024 & Voice app developer experiences with Alexa and Google Assistant & Voice assistants provide essential, low-friction accessibility for visually impaired users. & Focuses on general IPAs, lacking structured, syllabus-aligned pedagogical intent. \\
+	\hline
+	
+	\cite{duplooy2024} & du Plooy et al., 2024 & Personalized adaptive learning in higher education: A scoping review & Adaptive systems significantly boost academic performance and institutional engagement. & Real-time modality adaptation remains an unaddressed architectural gap. \\
+	\hline
+	
+	\cite{tan2025} & Sajja et al., 2024 & Artificial Intelligence-Enabled Intelligent Assistant for Personalized and Adaptive Learning & AI assistants improve satisfaction via automated pacing and difficulty adjustments. & Modality of content is static; no accessibility routing constraints are included. \\
+	\hline
+	
+	\cite{merino2025} & Crompton \& Burke, 2023 & Artificial intelligence in higher education: The state of the field & Identifies widespread adoption of AI for static educational augmentation and grading. & Comprehensive multi-modal generation specifically for engineering education is absent. \\
+	\hline
+	
+	\cite{search35_sajja2025} & Sajja et al., 2023 & Integrating AI and learning analytics for data-driven pedagogical decisions & Data-driven analytics refine and improve long-term pedagogical decision-making. & Does not incorporate real-time physical accessibility constraints into the pipeline. \\
+	\hline
+	
+	\cite{openai2023gpt4} & OpenAI, 2023 & GPT-4 Technical Report & Demonstrates robust reasoning and instruction-following for educational content generation. & Primarily text-based; prone to hallucination without strict retrieval grounding (RAG). \\
+	\hline
+	
+	\cite{google2023gemini} & Gemini Team, 2023 & Gemini: A Family of Highly Capable Multimodal Models & Natively multimodal architectures allow for seamless processing of varied sensory inputs. & Requires external pedagogical frameworks to structure actual educational delivery. \\
+	\hline
+	
+	\cite{liu2024multimodal} & Yin et al., 2023 & A Survey on Multimodal Large Language Models & Multimodal LLMs enable rich cross-modal generation from textual and visual prompts. & Can exhibit high latency overhead in real-time interactive educational environments. \\
+	\hline
+	
+	\cite{zhai2023multimodal} & Lee et al., 2023 & Multimodality of AI for Education: Towards Artificial General Intelligence & Multimodality is identified as the key to achieving AGI within digital education spaces. & Theoretical framework lacking physical assistive hardware integration. \\
+	\hline
+	
+	\cite{banihashem2022} & Banihashem et al., 2022 & A systematic review of the role of learning analytics in enhancing feedback practices & Analytics deeply enrich the specificity and actionable nature of student feedback. & Formative feedback lacks real-time sensory modality adjustments. \\
+	\hline
+	
+	\cite{search18_2025} & Zhai et al., 2021 & A review of artificial intelligence (AI) in education from 2010 to 2020 & Extensive growth of AI is primarily concentrated in automated grading and ITS platforms. & Very few systems architecturally address the needs of differently-abled learners. \\
+	\hline
+	
+	\cite{rastgoo2021} & Rastgoo et al., 2021 & Sign language recognition: A deep survey of CNN, RNN, and GAN-based approaches & CNNs and RNNs are highly effective for extracting spatial-temporal gesture features. & Computationally heavy for low-power edge devices compared to sensor gloves. \\
+	\hline
+	
+	\cite{zhou2024} & Hu et al., 2021 & SignBERT: Pre-training of hand-model-aware representation for sign language recognition & Transformer-based embeddings yield state-of-the-art gesture parsing from video. & Requires high-fidelity camera input and struggles heavily with hand occlusion. \\
+	\hline
+	
+	\cite{batte2025} & Saunders et al., 2021 & Skeletal Graph Self-Attention: Embedding a Skeleton Inductive Bias & Graph neural networks effectively model complex human hand and body articulation. & Highly complex model inference; impractical for offline wearable hardware interfaces. \\
+	\hline
+	
+	\cite{brown2020} & Brown et al., 2020 & Language models are few-shot learners & Few-shot prompting enables varied task completion without extensive model fine-tuning. & Yields unpredictable output formatting without strict grounding techniques. \\
+	\hline
+	
+	\cite{lewis2020} & Lewis et al., 2020 & Retrieval-augmented generation for knowledge-intensive NLP tasks & RAG drastically reduces hallucinations by grounding responses in verifiable vector databases. & Generative quality depends entirely on the coverage of the domain-specific vector index. \\
+	\hline
+	
+	\cite{jiang2021} & Camgoz et al., 2020 & Multi-channel transformers for multi-articulatory sign language translation & Multi-channel transformers translate complex, continuous gestures highly accurately. & Focuses exclusively on translation, not integration into interactive educational loops. \\
+	\hline
+	
+	\cite{hashi2024} & Oudah et al., 2020 & Hand gesture recognition based on computer vision: A review of techniques & Vision-based techniques dominate academic research but suffer in varied real-world lighting. & Hardware-based flex sensors offer more deterministic, low-latency gesture capture. \\
+	\hline
+	
+	\cite{mai2024} & Mai et al., 2020 & Modality to modality translation: An adversarial representation learning network & Adversarial networks successfully translate content across disparate sensory modalities. & Highly resource-intensive to train and susceptible to modal collapse. \\
+	\hline
+	
+	\cite{devlin2019} & Devlin et al., 2019 & BERT: Pre-training of deep bidirectional transformers for language understanding & Bidirectional context yields superior semantic understanding for intent classification. & Not inherently generative; must be paired with autoregressive models or databases. \\
+	\hline
+	
+	\cite{di2018} & Di Mitri et al., 2018 & From signals to knowledge: A conceptual model for multimodal learning analytics & Multimodal signals provide a holistic, multi-dimensional view of the learner's cognitive state. & Real-time, low-latency processing of disparate multimodal signals remains challenging. \\
+	\hline
+	
+	\cite{w3c2018} & W3C, 2018 & Web Content Accessibility Guidelines (WCAG) 2.1 & Establishes comprehensive global standards (Level AAA) for digital inclusivity. & Guidelines act as static directives, not active, automated software routing mechanisms. \\
+	\hline
+	
+	\cite{esquivel2024} & Pradhan et al., 2018 & Accessibility came by accident: Use of voice-controlled intelligent personal assistants & Mainstream voice assistants inadvertently serve visually impaired communities exceptionally well. & Broad, general-purpose design lacks structured, syllabus-aligned pedagogical frameworks. \\
+	\hline
+	
+	\cite{vaswani2017} & Vaswani et al., 2017 & Attention is all you need & Self-attention mechanisms outperform recurrent models in speed and long-range context. & Requires substantial memory overhead for processing long educational context passages. \\
+	\hline
+	
+	\cite{fu2025} & Konečný et al., 2016 & Federated learning: Strategies for improving communication efficiency & Enables privacy-preserving decentralized model training on local devices. & High communication network overhead for continuous, real-time platform adaptations. \\
+	\hline
+	
+	\cite{koedinger2012} & Koedinger et al., 2013 & New potentials for data-driven intelligent tutoring system development and optimization & Cognitive analytics improve Intelligent Tutoring System (ITS) efficacy significantly. & Adapts pacing and difficulty exclusively, completely ignoring content presentation modality. \\
+	\hline
+	
+	\cite{siemens2013} & Siemens \& Long, 2011 & Penetrating the fog: Analytics in learning and education & Establishes the foundational framework for modern educational data mining (EDM). & Predates modern multimodal AI, limiting analysis to traditional clickstream data. \\
+	\hline
+	
+	\cite{pashler2008} & Pashler et al., 2008 & Modality preference signals: Concepts and evidence & Found no empirical evidence that static learning styles independently boost learning outcomes. & Ignored the potential of dynamically adapting styles based on ongoing behavioral cues. \\
+	\hline
+	
+	\cite{fleming1992} & Fleming \& Mills, 1992 & Not another inventory, rather a catalyst for reflection & Established the VARK modalities as a practical self-reflection tool for educators and students. & Treats learning styles as fixed, lifelong traits rather than fluid, evolving preferences. \\
+	\hline
+	
+\end{longtable}
+\normalsize
+\renewcommand{\arraystretch}{1}
 
 \section[Motivation]{\textbf{Motivation}}
 
-Brief the motivation of selecting your project title. You can elaborate the challenges in the specific area, relevance and importance of the chosen topic. 
+The central motivation for NeuroLearn arises from the persistent mismatch between how educational technology delivers content and how learners naturally process it. Engineering education, in particular, demands the processing of abstract mathematical concepts, algorithmic procedures, and hardware-level design --- all of which place high cognitive demands on students. Research consistently shows that when content is presented in a format misaligned with a learner's preferred modality, cognitive load increases and retention suffers.
 
-\section[Problem statement]{\textbf{Problem statement}}
+Existing adaptive systems have largely solved the problem of \textit{what} to teach (difficulty adaptation) but have left largely unaddressed the equally important question of \textit{how} to teach it (modality adaptation). Furthermore, accessibility has been chronically underprioritized as a design concern, creating educational inequities for students with visual, auditory, or motor impairments. NeuroLearn is motivated by the conviction that genuine personalization must encompass both presentation modality and accessibility support, unified within a single adaptive architecture rather than implemented as afterthoughts.
 
-Define the problem statement in this section, in one paragraph.
+\section[Problem Statement]{\textbf{Problem Statement}}
+
+Current AI-powered educational platforms fail to dynamically adapt the modality of content delivery to individual learner preferences, relying instead on static self-reported assessments or difficulty-based adaptations that ignore how learners actually interact with content. Furthermore, accessibility support is treated as a supplementary feature rather than an architectural requirement, leaving learners with disabilities at a systematic disadvantage. This project addresses the need for a unified, behavior-driven, accessibility-first adaptive learning framework that continuously infers modality preferences from real-time interaction data and delivers personalized multi-modal content grounded in verified curricular knowledge.
 
 \section[Objectives]{\textbf{Objectives}}
-The objectives of the project are
+
+The objectives of the project are:
 \begin{enumerate}
-\item To design a pipelined ADC for audio frequency range
-\item List all the objectives in the above format , starting with "To"
-\item Limit the number of objectives to a maximum of three
+	\item To design and implement a Dynamic Modality Preference Modeling (DMPM) framework that fuses psychometric VARK assessments with real-time behavioral interaction data using exponential decay weighting, achieving superior learner profiling accuracy over static approaches.
+	\item To develop a modality-aware Retrieval-Augmented Generation (RAG) pipeline that generates curriculum-aligned content across all four VARK modalities --- visual animations, audio explanations, structured text summaries, and interactive simulations --- grounded in a FAISS vector database of course materials.
+	\item To integrate accessibility as a core architectural requirement by implementing an accessibility-first adaptation algorithm that automatically routes learners with visual, auditory, or motor impairments to appropriate modalities, ensuring WCAG 2.1 Level AAA compliance throughout the platform.
 \end{enumerate}
 
-\section[Brief Methodology of the project]{\textbf{Brief Methodology of the project}}
-Discuss about the methodology you identified to execute the objectives of your project in brief. Methodology is a system of practices, techniques, procedures, and rules used to execute a particular project. You can elaborate the methodology in a later chapter. Here you can present in the form of a flow diagram and explain the methodology in a paragraph.
+\section[Brief Methodology of the Project]{\textbf{Brief Methodology of the Project}}
 
-\section[Assumptions made / Constraints of the project]{\textbf{Assumptions made / Constraints of the project}}
+The methodology of NeuroLearn follows a three-tier adaptive pipeline. In the first tier (\textbf{Learner Profiling}), new users complete a 16-item VARK questionnaire that generates an initial modality preference vector $\mathbf{p}_{\text{VARK}} = [v, a, r, k]$. As the user interacts with the platform, a behavioral profile vector is computed by weighting interaction frequency and duration across content modalities. These two signals are fused using the DMPM algorithm:
+\[
+\mathbf{p}_{\text{final}} = \alpha(n)\,\mathbf{p}_{\text{VARK}} + (1 - \alpha(n))\,\mathbf{p}_{\text{behavior}}, \quad \alpha(n) = e^{-\lambda n}
+\]
+where $n$ is the session count and $\lambda = 0.15$ was empirically determined through pilot testing.
 
-List the assumptions made for the execution of the project in this section. You can also elaborate on the major constraints of the project. This section should clearly state under what conditions your project is valid. It is mandatory to have this section in your project report.
+In the second tier (\textbf{Content Generation}), the dominant modality is identified and a user query is processed through the RAG pipeline: BERT encodes the query, FAISS retrieves the top-$k$ most relevant passages from the course knowledge base (cosine similarity $\geq 0.6$), and Gemini generates modality-specific content --- Manim animation scripts for visual learners, BART-summarized audio via Google Cloud TTS for auditory learners, detailed text explanations for reading/writing learners, and interactive sandbox simulations for kinesthetic learners.
 
-\section[Organization of the report]{\textbf{Organization of the report}}
+In the third tier (\textbf{Accessibility Override}), a supervisory algorithm checks for declared accessibility flags before routing content. Visually impaired users are always routed to audio-centric modalities with full screen reader support, regardless of inferred preferences. Hearing-impaired users receive visual-dominant content with complete captions and transcripts. Motor-impaired users are served via full keyboard navigation and voice control. Profile refinement occurs continuously as new interaction data is collected, progressively improving personalization accuracy over sessions.
 
-This report is organized as follows. Write the discussions in each chapter. A sample is as follows.
+\section[Assumptions Made / Constraints of the Project]{\textbf{Assumptions Made / Constraints of the Project}}
+
+The following assumptions and constraints apply to this project:
 \begin{itemize}
-\item Chapter 2 discusses the fundamentals of ADC and the performance parameters for evaluation.
-\item Chapter 3 discusses .
-\item Chapter 4 discusses .
-\item Chapter 5 discusses .
-\item Chapter 6 discusses .
+	\item The system assumes learners have access to a reliable internet connection and a modern web browser, as content delivery relies on cloud-based TTS, animation rendering, and API calls.
+	\item The VARK questionnaire provides a reasonable initialization prior; the system is designed to recover from inaccurate self-assessments through behavioral correction over subsequent sessions.
+	\item The FAISS vector knowledge base is pre-populated with RVCE course lecture notes for the four subjects used in evaluation; the system's content quality is bounded by the quality of these source materials.
+	\item The exponential decay parameter $\lambda = 0.15$ was empirically optimized on a pilot cohort of 20 students; its generalizability to significantly different educational contexts may require re-tuning.
+	\item Visual animation generation (Manim) has higher latency (mean 5.4\,s) than other modalities; progressive loading and caching strategies are implemented but a stable network is assumed.
+	\item The study is validated on undergraduate engineering students; generalizability to other disciplines (humanities, K-12, professional education) has not been empirically tested.
 \end{itemize}
 
-.
+\section[Organization of the Report]{\textbf{Organization of the Report}}
+
+This report is organized as follows:
+\begin{itemize}
+	\item Chapter 1 introduces the project, presents the literature review, defines the problem statement and objectives, outlines the methodology, and lists assumptions and constraints.
+	\item Chapter 2 discusses the system design and architecture, detailing the three-tier adaptive pipeline, the hybrid learner profiling mechanism, and the multi-modal content generation engine.
+	\item Chapter 3 discusses the algorithmic framework, presenting the three core algorithms: Dynamic Modality Preference Modeling (DMPM), Modality-Aware RAG Generation, and Accessibility-First Adaptation.
+	\item Chapter 4 discusses the implementation details, covering the full technical stack, privacy and security mechanisms, and deployment infrastructure.
+	\item Chapter 5 discusses the experimental results, including profiling accuracy, learning outcomes, engagement metrics, ablation studies, and accessibility impact assessments.
+	\item Chapter 6 concludes the report with a summary of contributions, discussion of limitations, and directions for future research.
+\end{itemize}

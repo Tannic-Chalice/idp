@@ -4,18 +4,11 @@
   \draw[line width = 4pt] ($(current page.north west) + (0.75in,-0.75in)$) rectangle ($(current page.south east) + (-0.75in,0.75in)$);
 \end{tikzpicture}
 
+The digital learning landscape increasingly demands personalization to overcome poor engagement and suboptimal learning outcomes associated with "one-size-fits-all" content delivery. Standard educational tools often fail to account for individual differences in how students process information, a problem particularly acute in abstract engineering disciplines. While theories like the VARK framework offer a basis for personalization, they are typically applied as static, one-time assessments that do not adapt to evolving needs. This research addresses these limitations by introducing an AI-driven framework that treats modality preference as a dynamic, behaviorally-informed signal rather than a fixed trait.
 
-Highlights of significant contributions: One page with 3 to 4 paragraphs\\
+The primary objective of this work is the development of the Dynamic Modality Preference Modeling (DMPM) framework. Central to this is a behavior-weighted fusion model utilizing an exponential decay function, $p_{\text{final}} = \alpha(n)p_{\text{VARK}} + (1 - \alpha(n))p_{\text{behavior}}$. This formulation allows the system to transition from self-reported priors to more reliable observed interaction evidence over time. Additionally, a modality-aware Retrieval-Augmented Generation (RAG) pipeline was formulated to ensure curriculum-aligned content generation across visual, auditory, reading, and kinesthetic formats. The architecture employs a three-tier microservices approach, integrating BERT for semantics and FAISS for efficient vector-based context retrieval.
 
-Paragraph 1: Importance and relevance of Topic, reported issues and limitations of the topic in performance or computation etc, issues involved in those limitations, need for addressing those issues and a short note on how that is addressed in this report.
+The implementation utilizes a modern technical stack including React.js and Python Flask. Results demonstrate that the hybrid profiling mechanism achieved 92.1\% accuracy by the tenth session, a significant improvement over the 68.4\% accuracy of static VARK-only baselines. Learning outcomes improved by an average of 14.9\%, with the largest gain of 19.8\% observed in abstract subjects like Digital Logic. Furthermore, the architecture facilitated a 38.4\% increase in average session duration and a 35\% increase in course completion rates.
 
-
-Paragraph 2: Objectives of this work, short note on algebraic methods used and formulations achieved, computational procedures developed. \gls{ic}.
-
-
-Paragraph 3: Description of simulation procedure including SW tools used and choice of test cases. Short note on results achieved and significant highlights of improvements if any in terms of percentage , for example the architecture presented in this report shows 22 \% improve in power consumption as compared to the previously reported articles.
-\gls{ic}
-
-Paragraph 4: The last para needed only if emulation (after simulation) or Hardware developed to validate simulation results in para 3. 
-
+The architecture achieved a 95.8\% task success rate for users with identified accessibility needs. Usability scores reached 81.7 on the System Usability Scale (SUS), validating the framework's effectiveness in providing equitable and high-quality educational experiences for all diverse learners.
 \pagebreak
